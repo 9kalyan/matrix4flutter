@@ -44,31 +44,32 @@ class _appState extends State<app> {
         child: Container(
           height: 500,
           width: 200,
-          color: Colors.black,
+    
 
           child:Center(child: Stack(children: [
 
-                        Positioned(bottom: a*3,child: 
-            Transform(alignment: Alignment.center,transform: Matrix4.identity()..setEntry(3, 2, 0.001)..translate(0,0,a*2),child:
+                        Positioned(bottom: a*1,child: 
+            Transform(alignment: Alignment.center,transform: Matrix4.identity()..setEntry(3, 2, 0.001)..translate(0,0,a*2)..rotateX(a/200),child:
             Container(color: Color.fromARGB(255, 255, 0, 0),width: 200,height: 100,
             child: FlutterLogo(),
             ))),
-                        Positioned(bottom: a*2,child: 
+                        Positioned(bottom: a*0.7,child: 
                         Transform(alignment: Alignment.center,
                         transform: Matrix4.identity()..setEntry(3,2,0.001)
-                        ..translate(0.0,0.0,a),child:
+                        ..translate(0.0,0.0,a)..rotateX(a/200),child:
             Container(color: Color.fromARGB(255, 195, 245, 14),width: 200,height: 100,
             child: FlutterLogo(),
             ))),
-            Positioned(bottom: a*1,left: 0,child: 
-            Container(color: const Color.fromARGB(255, 54, 244, 225),width: 200,height: 100,
+            Positioned(bottom: a*0.4,left: 0,child: 
+          Transform(alignment: Alignment.center,transform: Matrix4.identity()..setEntry(3, 2, 0.001)..rotateX(a/200),child:  Container(color: const Color.fromARGB(255, 54, 244, 225),width: 200,height: 100,
             child: FlutterLogo(),
-            )),
-
+            ))),
+Opacity(opacity: 0,child:
             Slider(value: a, onChanged: (v){setState(() {
               a=v;
-            });},min: 0,max: 100,)
-          ]),
+            });},min: 0,max: 100,))
+          ])
+          ,
         ),)
       ),
     );
